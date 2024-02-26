@@ -23,13 +23,13 @@
 module mod3_1(
 input clk,
 input reset_n,
-input  signed [22:0]a,    // 18 bit
-input  signed [22:0]b,    // 20 bit
-input signed [16:0]c,    // 18 bit
+    input  signed [22:0]a,    // 23 bit
+    input  signed [22:0]b,    // 23 bit
+    input signed [16:0]c,    // 17 bit
 output signed [39:0]y
     );
     
-    reg signed [22:0] a1;
+    reg signed [22:0] a1;  // registering inputs and outputs
     reg signed [22:0] b1;
     reg signed [16:0] c1;
     reg signed [23:0] sum;
@@ -48,7 +48,7 @@ output signed [39:0]y
              a1<=a;
              b1<=b;
              c1<=c;
-             sum <= a1-b1;
+             sum <= a1+b1;
             result <= sum * c1;
              end
     end
